@@ -1,0 +1,42 @@
+[tool.poetry]
+name = "simple-python-cli"
+version = "0.1.0"
+description = "A simple Python CLI application."
+authors = ["Your Name <youremail@example.com>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+# Add other dependencies here
+
+[tool.poetry.dev-dependencies]
+black = "^22.3.0"
+pylint = "^2.12.2"
+pytest = "^7.1.2"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+[tool.black]
+line-length = 88
+target-version = ['py310']
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.git
+  | \.mypy_cache
+  | \.venv
+  | build
+  | dist
+)/
+'''
+
+[tool.pylint.'MESSAGES CONTROL']
+disable = [
+    "C0114",  # brak docstringu w module
+    "C0115",  # brak docstringu w klasie
+    "C0116",  # brak docstringu w funkcji
+]
+
+[tool.pylint.'FORMAT']
+max-line-length = 88
