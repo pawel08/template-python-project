@@ -1,1 +1,1 @@
-# This file is intentionally left blank.
+"""Source package for the simple Python CLI application."""

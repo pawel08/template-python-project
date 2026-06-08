@@ -4,7 +4,7 @@
 # It will format the code and display any issues found.
 
 # Run black to check formatting
-black --check src tests scripts
+black --check src tests cli.py
 
 # Capture the exit status of the black command
 if [ $? -ne 0 ]; then

@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# Run pylint on the src and tests directories
-pylint src tests
+# Run pylint on the src and tests directories, and cli.py
+pylint src tests cli.py
 
 # Check if pylint ran successfully
 if [ $? -ne 0 ]; then

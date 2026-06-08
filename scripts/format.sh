@@ -5,8 +5,8 @@
 
 echo "Formatting code with black..."
 
-# Run black to format the code
-black src tests scripts
+# Run black to format the code (only Python files)
+black src tests cli.py
 
 if [ $? -eq 0 ]; then
     echo "Code formatted successfully."
