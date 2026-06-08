@@ -3,12 +3,10 @@ import os
 import sys
 from unittest.mock import patch
 
-from cli import main
-
 # Ensure the root directory is in the path
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-
+from cli import main
 
 
 def test_cli_addition():
