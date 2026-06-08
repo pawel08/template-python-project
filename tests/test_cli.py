@@ -1,6 +1,12 @@
 """Unit tests for the CLI module."""
+import sys
+import os
 import pytest
 from unittest.mock import patch
+
+# Add the root directory to the Python path
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 from cli import main
 
 
