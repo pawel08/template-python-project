@@ -1,5 +1,6 @@
 """Unit tests for the core module."""
 import pytest
+
 from src.core import add_numbers
 
 
