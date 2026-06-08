@@ -27,45 +27,93 @@ simple-python-cli
 └── README.md           # Project documentation
 ```
 
-## Installation
+## Quick Start
+
+### Prerequisites
+- Python 3.8 or higher
+- bash or compatible shell
+
+### Setup
 
 1. Clone the repository:
-   ```
+   ```bash
    git clone <repository-url>
    cd simple-python-cli
    ```
 
 2. Create a virtual environment and install dependencies:
-   ```
+   ```bash
    bash scripts/create_venv.sh
    ```
 
 ## Usage
 
 To run the application, use the following command:
-```
+```bash
 python src/cli.py
 ```
 
-## Running Tests
+## Development & Code Quality
 
-To run the tests, execute:
-```
+### Running Tests
+
+Execute the test suite:
+```bash
 bash scripts/test.sh
 ```
 
-## Code Quality
+This runs all unit tests in the `tests/` directory using pytest with warnings disabled.
 
-This project uses `black` for code formatting and `pylint` for linting. You can check the formatting and linting by running:
+### Code Formatting
+
+To automatically format your code using black:
+```bash
+bash scripts/format.sh
 ```
+
+To check if code is properly formatted (without making changes):
+```bash
 bash scripts/format_check.sh
+```
+
+### Linting
+
+To analyze code quality and style issues using pylint:
+```bash
 bash scripts/lint.sh
 ```
 
-## Contributing
+### Clean Repository
 
-Contributions are welcome! Please open an issue or submit a pull request for any improvements or bug fixes.
+To remove cache files, build artifacts, and temporary files:
+```bash
+bash scripts/clean.sh
+```
 
-## License
+## Continuous Integration (CI)
 
-This project is licensed under the MIT License. See the LICENSE file for details.
+### Pipeline Overview
+
+This project includes an automated CI pipeline using GitHub Actions (`.github/workflows/python-app.yml`). The pipeline is triggered on:
+- **Push** to `main`, `master`, or `develop` branches
+- **Pull Request** to `main` or `master` branches
+
+### What the Pipeline Checks
+
+The CI pipeline automatically runs the following checks in order:
+
+1. **Setup**: Checks out code and sets up Python 3.12
+2. **Dependencies**: Creates a virtual environment and installs required packages
+3. **Format Check**: Validates that code follows Black formatting standards (line-length: 88)
+4. **Linting**: Checks code quality using Pylint
+5. **Tests**: Runs the complete test suite using Pytest
+
+If any step fails, the pipeline will fail and prevent merging of pull requests. All checks must pass for CI to succeed.
+
+### Monitoring CI
+
+You can monitor your CI pipeline:
+- Go to the **Actions** tab in your GitHub repository
+- View build logs and results for each step
+- Failed checks show specific errors that need to be fixed locally
+
