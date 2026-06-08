@@ -31,4 +31,6 @@ jobs:
         run: bash scripts/lint.sh
 
       - name: Test with pytest
-        run: bash scripts/test.sh
+        run: |
+          export PYTHONPATH="${PYTHONPATH}:$(pwd)"
+          pytest tests/ -v

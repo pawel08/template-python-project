@@ -1,4 +1,5 @@
 """Unit tests for the core module."""
+
 import pytest
 
 from src.core import add_numbers
@@ -26,4 +27,3 @@ def test_add_numbers_zero():
     """Test adding with zero."""
     result = add_numbers(5, 0)
     assert result == 5
-
