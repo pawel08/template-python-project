@@ -10,8 +10,6 @@ from cli import main
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 
-
-
 def test_cli_addition():
     """Test the CLI with two numbers."""
     with patch("builtins.input", side_effect=["5", "3"]):
