@@ -7,8 +7,6 @@ from unittest.mock import patch
 # Ensure the root directory is in the path
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-import pytest
-
 from cli import main
 
 
