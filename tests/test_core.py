@@ -1,5 +1,5 @@
 import pytest
-from app.core import your_function  # Replace with the actual function you want to test
+from src.core import your_function  # Replace with the actual function you want to test
 
 def test_your_function():
     # Arrange
